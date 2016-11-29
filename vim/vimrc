@@ -14,4 +14,5 @@ autocmd InsertEnter * match ExtraWhitespace /\t\+\|\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\t\+\|\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
+highlight ColorColumn ctermbg=7
 let &colorcolumn=join(range(81,999),",")
