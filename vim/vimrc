@@ -1,0 +1,16 @@
+set expandtab
+set tabstop=4
+set shiftwidth=4
+syntax on
+set hlsearch
+set ruler
+set nowrap
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\t\+\|\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\t\+\|\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\t\+\|\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\t\+\|\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+let &colorcolumn=join(range(81,999),",")
